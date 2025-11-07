@@ -12,7 +12,7 @@ public class MyTests {
         hr = new HouseRobber();
         assertEquals(5, hr.robMemoization(new int[] {5}));
         hr = new HouseRobber();
-        assertEquals(13, hr.robMemoization(new int[] {1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 0}));
+        assertEquals(27, hr.robMemoization(new int[] {2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 0}));
     }
 
     @Test
@@ -20,6 +20,6 @@ public class MyTests {
         assertEquals(6, HouseRobber.robTabulation(new int[] {1, 4, 5}));
         assertEquals(0, HouseRobber.robTabulation(new int[0]));
         assertEquals(5, HouseRobber.robTabulation(new int[] {5}));
-        assertEquals(13, HouseRobber.robTabulation(new int[] {1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 0}));
+        assertEquals(27, HouseRobber.robTabulation(new int[] {2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 0}));
     }
 }
