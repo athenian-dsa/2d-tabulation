@@ -4,34 +4,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MyTests {
     @Test
-    public void testChangeNoMemo() {
-        CoinChange c1 = new CoinChange();
-        assertEquals(4, c1.changeNoMemo(new int[] {1, 4, 5}, 18));
-        c1 = new CoinChange();
-        assertEquals(7, c1.changeNoMemo(new int[] {1, 4, 5}, 33));
-        c1 = new CoinChange();
-        assertEquals(4, c1.changeNoMemo(new int[] {1, 3, 5}, 16));
-        c1 = new CoinChange();
-        assertEquals(7, c1.changeNoMemo(new int[] {1, 3, 5}, 33));
+    public void testMemo() {
+        HouseRobber hr = new HouseRobber();
+        assertEquals(6, hr.robMemoization(new int[] {1, 4, 5}));
+        hr = new HouseRobber();
+        assertEquals(0, hr.robMemoization(new int[0]));
+        hr = new HouseRobber();
+        assertEquals(5, hr.robMemoization(new int[] {5}));
+        hr = new HouseRobber();
+        assertEquals(13, hr.robMemoization(new int[] {1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 0}));
     }
 
     @Test
-    public void testChangeMemoSmall() {
-        CoinChange c1 = new CoinChange();
-        assertEquals(4, c1.changeWithMemo(new int[] {1, 4, 5}, 18));
-        c1 = new CoinChange();
-        assertEquals(7, c1.changeWithMemo(new int[] {1, 4, 5}, 33));
-        c1 = new CoinChange();
-        assertEquals(4, c1.changeWithMemo(new int[] {1, 3, 5}, 16));
-        c1 = new CoinChange();
-        assertEquals(7, c1.changeWithMemo(new int[] {1, 3, 5}, 33));
-    }
-
-    @Test
-    public void testChangeMemoLarge() {
-        CoinChange c1 = new CoinChange();
-        assertEquals(118, c1.changeWithMemo(new int[] {1, 4, 5}, 588));
-        c1 = new CoinChange();
-        assertEquals(258, c1.changeWithMemo(new int[] {1, 4, 5}, 1288));
+    public void testTabulation() {
+        assertEquals(6, HouseRobber.robTabulation(new int[] {1, 4, 5}));
+        assertEquals(0, HouseRobber.robTabulation(new int[0]));
+        assertEquals(5, HouseRobber.robTabulation(new int[] {5}));
+        assertEquals(13, HouseRobber.robTabulation(new int[] {1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 0}));
     }
 }
