@@ -4,6 +4,7 @@ public class Main {
     // memoization (if doing memoization, make a separate function to recur)
     // See instructions on Canvas. Implementing latestNonOverlapping is recommended.
     // For your convenience, the intervals will be sorted by end time.
+    // An interval that starts as another ends is /not/ considered to overlap
     public static int weightedInterviewScheduling(WeightedInterval[] intervals) {
         return -1;
     }
